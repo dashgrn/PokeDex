@@ -18,7 +18,7 @@ export const loginEmailPassword = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
                 dispatch(login(user.uid, user.displayName))
-                console.log('Bienvenido ' + user.displayName)
+                // console.log('Bienvenido ', user.displayName)
             })
             .catch(e => {
                 console.log(e)

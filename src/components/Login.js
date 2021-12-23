@@ -3,7 +3,7 @@ import React from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { login, loginFacebook, loginGoogle } from '../actions/loginAction';
+import { loginEmailPassword, loginFacebook, loginGoogle } from '../actions/loginAction';
 
 
 function Login() {
@@ -17,7 +17,7 @@ function Login() {
         },
         onSubmit: (data) => {
             console.log(data)
-            dispatch(login(data.email, data.password))
+            dispatch(loginEmailPassword(data.email, data.password))
             formik.resetForm()
         }
     })
@@ -35,7 +35,7 @@ function Login() {
 
 
     return (
-        <div className="">
+        <div className='m-5' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Card>
                 <Card.Body>
                     <Card.Title>Para Usar el PokeDex, debes iniciar sesión</Card.Title>
@@ -62,7 +62,7 @@ function Login() {
                                 onChange={formik.handleChange}
                             />
                         </Form.Group>
-                        <div className="container-botom">
+                        <div styles={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <Button variant="info" type="submit">
                                 Inicia Sesión
                             </Button>
@@ -88,7 +88,7 @@ function Login() {
                                     alt="fb button" />
                             </Button>
                             <hr />
-                            <span>¿No tienes una cuenta? <Link to="/registro"> Registrate</Link></span>
+                            <span>¿No tienes una cuenta? <Link to="/register"> Registrate</Link></span>
                         </div>
                     </Form>
                 </Card.Body>
