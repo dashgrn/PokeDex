@@ -1,9 +1,10 @@
-import { Home } from './components/Home'
+
+import AppRouter from './routers/AppRouter';
 
 function App() {
   return (
     <>
-      <Home />
+      <AppRouter />
     </>
   );
 }
